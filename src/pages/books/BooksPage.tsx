@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styles from './BooksPage.module.scss';
 
-const BooksPage = () => {
+const BooksPage: FC = () => {
   return <div className={styles.booksPage}>Books</div>;
 };
 
