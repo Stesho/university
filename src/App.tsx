@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/home/HomePage';
 import BooksPage from './pages/books/BooksPage';
+import RegistrationPage from './pages/registration/RegistrationPage';
 import Header from './components/header/Header';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path={'/'} element={<HomePage />} />
         <Route path={'/books'} element={<BooksPage />} />
+        <Route path={'/registration'} element={<RegistrationPage />} />
       </Routes>
     </BrowserRouter>
   );

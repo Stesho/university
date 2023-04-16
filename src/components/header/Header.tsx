@@ -23,7 +23,7 @@ const Header = () => {
           <SearchIcon className={styles.searchIcon} />
         </div>
         <div className={styles.menu}>
-          <NavLink to={'/account'} className={styles.account}>
+          <NavLink to={'/registration'} className={styles.account}>
             <AccountIcon className={styles.accountIcon} />
             <span className={styles.accountCaption}>Account</span>
           </NavLink>
