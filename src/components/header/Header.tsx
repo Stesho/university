@@ -5,6 +5,7 @@ import { ReactComponent as AccountIcon } from '../../assets/icons/account-icon.s
 import { ReactComponent as CartIcon } from '../../assets/icons/cart-icon.svg';
 import { ReactComponent as WishListIcon } from '../../assets/icons/wishlist-icon.svg';
 import { ReactComponent as SearchIcon } from '../../assets/icons/search-icon.svg';
+import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
 
 type ActiveLink = {
   isActive: boolean;
@@ -17,7 +18,9 @@ const Header = () => {
   return (
     <header className={`${styles.header} container`}>
       <div className={styles.topPanel}>
-        <div className={styles.userIcon}></div>
+        <NavLink to={'/home'} className={styles.logo}>
+          <Logo />
+        </NavLink>
         <div className={styles.searchBar}>
           <input className={styles.searchInput} placeholder={'Search Books'} />
           <SearchIcon className={styles.searchIcon} />
