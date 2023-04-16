@@ -1,0 +1,38 @@
+:root {
+  --white: #fff;
+
+  --black-100: #111111;
+
+  --grey-100: #f6f6f6;
+  --grey-200: #e0e0e0;
+  --grey-300: #c4c4c4;
+  --grey-400: #bcbcbc;
+
+  --blue-100: #393280;
+
+  --red-100: #ed553b;
+}
+
+html[color-theme='light'] {
+  --primary-color: var(--grey-100);
+  --primary-light-color: var(--white);
+  --secondary-color: var(--black);
+  --secondary-light-color: var(--grey-200);
+  --neutral-color: var(--navy-blue-300);
+  --neutral-additional-color: var(--white);
+  --hover-color: var(--navy-blue-200);
+  --hover-additional-color: var(--navy-blue-100);
+  --shadow: var(--dark-shadow);
+}
+
+html[color-theme='dark'] {
+  --primary-color: var(--dark-grey-200);
+  --primary-light-color: var(--dark-grey-100);
+  --secondary-color: var(--blue-200);
+  --secondary-light-color: var(--blue-100);
+  --neutral-color: var(--blue-200);
+  --neutral-additional-color: var(--blue-400);
+  --hover-color: var(--navy-blue-100);
+  --hover-additional-color: var(--blue-300);
+  --shadow: var(--light-shadow);
+}
