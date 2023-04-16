@@ -13,11 +13,7 @@ const HomePage: FC = () => {
   //   fetchBooks();
   // }, []);
 
-  return (
-    <div className={styles.homePage}>
-      <Header />
-    </div>
-  );
+  return <div className={styles.homePage}>Home</div>;
 };
 
 export default HomePage;

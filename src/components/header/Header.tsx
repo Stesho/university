@@ -6,7 +6,14 @@ import { ReactComponent as CartIcon } from '../../assets/icons/cart-icon.svg';
 import { ReactComponent as WishListIcon } from '../../assets/icons/wishlist-icon.svg';
 import { ReactComponent as SearchIcon } from '../../assets/icons/search-icon.svg';
 
+type ActiveLink = {
+  isActive: boolean;
+};
+
 const Header = () => {
+  const setActiveLink = (active: ActiveLink) =>
+    active.isActive ? `${styles.activeLink}` : '';
+
   return (
     <header className={`${styles.header} container`}>
       <div className={styles.topPanel}>
@@ -33,19 +40,29 @@ const Header = () => {
       <nav className={styles.navbar}>
         <ul className={styles.navbarList}>
           <li className={styles.navbarItem}>
-            <NavLink to={'/'}>Home</NavLink>
+            <NavLink to={'/'} className={setActiveLink}>
+              Home
+            </NavLink>
           </li>
           <li className={styles.navbarItem}>
-            <NavLink to={'/about'}>About us</NavLink>
+            <NavLink to={'/about'} className={setActiveLink}>
+              About us
+            </NavLink>
           </li>
           <li className={styles.navbarItem}>
-            <NavLink to={'/books'}>Books</NavLink>
+            <NavLink to={'/books'} className={setActiveLink}>
+              Books
+            </NavLink>
           </li>
           <li className={styles.navbarItem}>
-            <NavLink to={'/releases'}>New releases</NavLink>
+            <NavLink to={'/releases'} className={setActiveLink}>
+              New releases
+            </NavLink>
           </li>
           <li className={styles.navbarItem}>
-            <NavLink to={'/contacts'}>Contact us</NavLink>
+            <NavLink to={'/contacts'} className={setActiveLink}>
+              Contact us
+            </NavLink>
           </li>
         </ul>
       </nav>
