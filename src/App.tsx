@@ -4,6 +4,7 @@ import HomePage from './pages/home/HomePage';
 import BooksPage from './pages/books/BooksPage';
 import RegistrationPage from './pages/registration/RegistrationPage';
 import Header from './components/header/Header';
+import LoginPage from './pages/login/LoginPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path={'/'} element={<HomePage />} />
         <Route path={'/books'} element={<BooksPage />} />
         <Route path={'/registration'} element={<RegistrationPage />} />
+        <Route path={'/login'} element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
   );

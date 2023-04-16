@@ -1,4 +1,4 @@
-import { SERVER_URL, SIGNUP_URL } from '../constants/apiConstants';
+import { SERVER_URL, SIGNIN_URL, SIGNUP_URL } from '../constants/apiConstants';
 import User from '../types/user';
 
 const api = {
@@ -18,6 +18,26 @@ const api = {
   signUp: async (user: User) => {
     try {
       const response = await fetch(`${SERVER_URL}${SIGNUP_URL}`, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user),
+      });
+
+      if (!response?.ok) {
+        return 'Response Error';
+      }
+
+      return await response.json();
+    } catch (error) {
+      return 'Server Error';
+    }
+  },
+  signIn: async (user: User) => {
+    try {
+      const response = await fetch(`${SERVER_URL}${SIGNIN_URL}`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import api from '../../core/api/api';
-import styles from './RegistrationPage.module.scss';
+import styles from './LoginPage.module.scss';
 import User from '../../core/types/user';
+import api from '../../core/api/api';
+import { setCookie } from '../../core/services/cookie';
 
-const RegistrationPage = () => {
+const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -17,12 +18,12 @@ const RegistrationPage = () => {
       email,
       password,
     };
-    const response = await api.signUp(user);
-    console.log(response);
+    const response = await api.signIn(user);
+    setCookie('token', response.token);
   };
 
   return (
-    <main className={`${styles.registrationPage} container`}>
+    <main className={`${styles.loginPage} container`}>
       <form className={styles.form} onSubmit={preventDefaultSubmit}>
         <input
           onChange={(event) => setUsername(event.target.value)}
@@ -39,10 +40,10 @@ const RegistrationPage = () => {
           type={'text'}
           placeholder={'password'}
         />
-        <button onClick={onSubmit}>Sign up</button>
+        <button onClick={onSubmit}>Sign in</button>
       </form>
     </main>
   );
 };
 
-export default RegistrationPage;
+export default LoginPage;
