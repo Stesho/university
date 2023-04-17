@@ -7,21 +7,22 @@ import {
 import User from '../types/user';
 import axios from 'axios';
 import { getCookie } from '../services/cookie';
+import Author from '../types/author';
 
 const api = {
-  signUp: async (user: User) => {
+  signUp: async (user: User): Promise<User> => {
     try {
       const response = await axios.post(`${BASE_URL}${SIGNUP_URL}`, {
         ...user,
       });
 
       if (response.status !== 200) {
-        return response.statusText;
+        throw new Error(response.statusText);
       }
 
       return response.data;
     } catch (error) {
-      return 'Unknown error';
+      throw new Error('Unknown Error');
     }
   },
   signIn: async (user: User) => {
@@ -31,15 +32,15 @@ const api = {
       });
 
       if (response.status !== 200) {
-        return response.statusText;
+        throw new Error(response.statusText);
       }
 
       return response.data;
     } catch (error) {
-      return 'Unknown error';
+      throw new Error('Unknown Error');
     }
   },
-  fetchAuthors: async () => {
+  fetchAuthors: async (): Promise<Author[]> => {
     try {
       const token = getCookie('token');
       const response = await axios.get(`${BASE_URL}${AUTHORS_URL}`, {
@@ -49,12 +50,12 @@ const api = {
       });
 
       if (response.status !== 200) {
-        return response.statusText;
+        throw new Error(response.statusText);
       }
 
       return response.data;
     } catch (error) {
-      return 'Unknown error';
+      throw new Error('Unknown Error');
     }
   },
 };
