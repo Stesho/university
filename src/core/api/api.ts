@@ -1,58 +1,36 @@
-import { SERVER_URL, SIGNIN_URL, SIGNUP_URL } from '../constants/apiConstants';
+import { BASE_URL, SIGNIN_URL, SIGNUP_URL } from '../constants/apiConstants';
 import User from '../types/user';
+import axios from 'axios';
 
 const api = {
-  fetchBooks: async () => {
-    try {
-      const response = await fetch(`${SERVER_URL}/api/test/all`);
-
-      if (!response?.ok) {
-        return 'Error';
-      }
-
-      return await response.json();
-    } catch (error) {
-      return 'Error';
-    }
-  },
   signUp: async (user: User) => {
     try {
-      const response = await fetch(`${SERVER_URL}${SIGNUP_URL}`, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(user),
+      const response = await axios.post(`${BASE_URL}${SIGNUP_URL}`, {
+        ...user,
       });
 
-      if (!response?.ok) {
-        return 'Response Error';
+      if (response.status !== 200) {
+        return response.statusText;
       }
 
-      return await response.json();
+      return response.data;
     } catch (error) {
-      return 'Server Error';
+      return 'Unknown error';
     }
   },
   signIn: async (user: User) => {
     try {
-      const response = await fetch(`${SERVER_URL}${SIGNIN_URL}`, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(user),
+      const response = await axios.post(`${BASE_URL}${SIGNIN_URL}`, {
+        ...user,
       });
 
-      if (!response?.ok) {
-        return 'Response Error';
+      if (response.status !== 200) {
+        return response.statusText;
       }
 
-      return await response.json();
+      return response.data;
     } catch (error) {
-      return 'Server Error';
+      return 'Unknown error';
     }
   },
 };
