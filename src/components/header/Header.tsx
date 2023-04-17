@@ -48,18 +48,18 @@ const Header = () => {
             </NavLink>
           </li>
           <li className={styles.navbarItem}>
-            <NavLink to={'/about'} className={setActiveLink}>
-              About us
-            </NavLink>
-          </li>
-          <li className={styles.navbarItem}>
             <NavLink to={'/books'} className={setActiveLink}>
               Books
             </NavLink>
           </li>
           <li className={styles.navbarItem}>
-            <NavLink to={'/releases'} className={setActiveLink}>
-              New releases
+            <NavLink to={'/authors'} className={setActiveLink}>
+              Authors
+            </NavLink>
+          </li>
+          <li className={styles.navbarItem}>
+            <NavLink to={'/genres'} className={setActiveLink}>
+              Genres
             </NavLink>
           </li>
           <li className={styles.navbarItem}>
