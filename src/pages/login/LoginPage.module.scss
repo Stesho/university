@@ -12,24 +12,24 @@
   height: calc(100vh - 211px);
 }
 
-.loginCaption {
+.caption {
   margin: 26px 0 28px 0;
   font-size: 13px;
   letter-spacing: normal;
 }
 
-.loginForm {
+.form {
   display: flex;
   flex-direction: column;
   width: 400px;
 }
 
-.loginInput {
+.input {
   width: 100%;
   margin: 0 0 15px 0;
 }
 
-.loginCreate {
+.create {
   margin: 24px 0 40px 0;
   font-size: 13px;
   letter-spacing: normal;

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './LoginPage.module.scss';
 import User from '../../core/types/user';
 import api from '../../core/api/api';
@@ -27,32 +27,30 @@ const LoginPage = () => {
   return (
     <main className={`${styles.loginPage} container`}>
       <div className={styles.login}>
-        <h2 className={styles.loginTitle}>Login</h2>
-        <p className={styles.loginCaption}>
-          Please enter your e-mail and password:
-        </p>
-        <form className={styles.loginForm} onSubmit={preventDefaultSubmit}>
+        <h2 className={styles.title}>Login</h2>
+        <p className={styles.caption}>Please enter your e-mail and password:</p>
+        <form className={styles.form} onSubmit={preventDefaultSubmit}>
           <Input
             onChange={setUsername}
             type="email"
-            className={styles.loginInput}
+            className={styles.input}
             placeholder={'Username'}
           />
           <Input
             onChange={setEmail}
             type="email"
-            className={styles.loginInput}
+            className={styles.input}
             placeholder={'Email'}
           />
           <Input
             onChange={setPassword}
             type="password"
-            className={styles.loginInput}
+            className={styles.input}
             placeholder={'Password'}
           />
-          <button onClick={onSubmit}>Login</button>
+          <button onClick={onSubmit}>Sign In</button>
         </form>
-        <div className={styles.loginCreate}>
+        <div className={styles.create}>
           <span>{"Don't have an account? "}</span>
           <NavLink to="/registration">Create one</NavLink>
         </div>
