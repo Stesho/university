@@ -1,0 +1,28 @@
+@import '../../../styles/typography.scss';
+
+.input {
+  @extend .mainText;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 100%;
+  padding: 11px;
+  border: 1px solid var(--grey-400);
+  border-radius: 4px;
+  height: 40px;
+
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--black-100);
+  background-color: rgba(var(--grey-100), 0.4);
+
+  outline: none;
+
+  transition-duration: 0.3s;
+  transition-property: border, background-color, color;
+
+  &:focus {
+    border: 1px solid var(--black-100);
+  }
+}

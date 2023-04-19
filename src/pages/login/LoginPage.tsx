@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import styles from './LoginPage.module.scss';
 import User from '../../core/types/user';
 import api from '../../core/api/api';
 import { setCookie } from '../../core/services/cookie';
+import Input from '../../components/ui/input/Input';
+import { NavLink } from 'react-router-dom';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -24,24 +26,37 @@ const LoginPage = () => {
 
   return (
     <main className={`${styles.loginPage} container`}>
-      <form className={styles.form} onSubmit={preventDefaultSubmit}>
-        <input
-          onChange={(event) => setUsername(event.target.value)}
-          type={'text'}
-          placeholder={'username'}
-        />
-        <input
-          onChange={(event) => setEmail(event.target.value)}
-          type={'text'}
-          placeholder={'email'}
-        />
-        <input
-          onChange={(event) => setPassword(event.target.value)}
-          type={'text'}
-          placeholder={'password'}
-        />
-        <button onClick={onSubmit}>Sign in</button>
-      </form>
+      <div className={styles.login}>
+        <h2 className={styles.loginTitle}>Login</h2>
+        <p className={styles.loginCaption}>
+          Please enter your e-mail and password:
+        </p>
+        <form className={styles.loginForm} onSubmit={preventDefaultSubmit}>
+          <Input
+            onChange={setUsername}
+            type="email"
+            className={styles.loginInput}
+            placeholder={'Username'}
+          />
+          <Input
+            onChange={setEmail}
+            type="email"
+            className={styles.loginInput}
+            placeholder={'Email'}
+          />
+          <Input
+            onChange={setPassword}
+            type="password"
+            className={styles.loginInput}
+            placeholder={'Password'}
+          />
+          <button onClick={onSubmit}>Login</button>
+        </form>
+        <div className={styles.loginCreate}>
+          <span>{"Don't have an account? "}</span>
+          <NavLink to="/registration">Create one</NavLink>
+        </div>
+      </div>
     </main>
   );
 };
