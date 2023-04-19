@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import api from '../../core/api/api';
 import styles from './RegistrationPage.module.scss';
 import User from '../../core/types/user';
+import Input from '../../components/ui/input/Input';
+import { NavLink } from 'react-router-dom';
 
 const RegistrationPage = () => {
   const [username, setUsername] = useState('');
@@ -23,24 +25,37 @@ const RegistrationPage = () => {
 
   return (
     <main className={`${styles.registrationPage} container`}>
-      <form className={styles.form} onSubmit={preventDefaultSubmit}>
-        <input
-          onChange={(event) => setUsername(event.target.value)}
-          type={'text'}
-          placeholder={'username'}
-        />
-        <input
-          onChange={(event) => setEmail(event.target.value)}
-          type={'text'}
-          placeholder={'email'}
-        />
-        <input
-          onChange={(event) => setPassword(event.target.value)}
-          type={'text'}
-          placeholder={'password'}
-        />
-        <button onClick={onSubmit}>Sign up</button>
-      </form>
+      <div className={styles.registration}>
+        <h2 className={styles.title}>Registration</h2>
+        <p className={styles.caption}>Please enter your e-mail and password:</p>
+        <form className={styles.form} onSubmit={preventDefaultSubmit}>
+          <Input
+            onChange={setUsername}
+            type="email"
+            className={styles.input}
+            placeholder={'Username'}
+          />
+          <Input
+            onChange={setEmail}
+            type="email"
+            className={styles.input}
+            placeholder={'Email'}
+          />
+          <Input
+            onChange={setPassword}
+            type="password"
+            className={styles.input}
+            placeholder={'Password'}
+          />
+          <Input
+            onChange={setPassword}
+            type="password"
+            className={styles.input}
+            placeholder={'Confirm password'}
+          />
+          <button onClick={onSubmit}>Create Account</button>
+        </form>
+      </div>
     </main>
   );
 };
