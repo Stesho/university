@@ -2,14 +2,16 @@
   font-family: 'Inter', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.12em;
+
+  background-color: var(--secondary-color);
 }
 
 .topPanel {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 0;
-  border-bottom: 2px solid var(--grey-200);
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 .logo {
@@ -20,6 +22,9 @@
   svg {
     width: 100%;
     height: 100%;
+    path {
+      fill: var(--neutral-color-1);
+    }
   }
 }
 
@@ -30,13 +35,13 @@
 .searchInput {
   width: 617px;
   padding: 14px 66px 14px 24px;
-  background-color: var(--grey-100);
-  color: var(--black-100);
+  background-color: var(--primary-color);
+  color: var(--text-color-contrast);
   border: none;
   outline: none;
   border-radius: 20px;
   &::placeholder {
-    color: var(--grey-400);
+    color: var(--text-color-400);
     font-weight: 600;
     letter-spacing: 0.12em;
   }
@@ -51,6 +56,9 @@
   left: calc(100% - 42px);
   transform: translateY(-50%);
   cursor: pointer;
+  path {
+    fill: var(--text-color-contrast);
+  }
 }
 
 .menu {
@@ -58,12 +66,12 @@
   justify-content: space-between;
   font-size: 14px;
   font-weight: 600;
-  color: var(--blue-100);
+  color: var(--neutral-color-1);
   a {
     display: flex;
     align-items: center;
     padding: 0 17px;
-    border-right: 1px solid var(--grey-200);
+    border-right: 1px solid var(--text-color-200);
     &:last-child {
       padding: 0 0 0 17px;
       border-right: none;
@@ -71,13 +79,18 @@
   }
   svg {
     margin: 0 10px 0 0;
+    path {
+      fill: var(--neutral-color-1);
+      stroke: var(--neutral-color-1);
+    }
   }
 }
 
 .navbar {
   display: flex;
   justify-content: center;
-  padding: 33px 0;
+  padding: 15px 0;
+  background-color: var(--neutral-color-1);
 }
 
 .navbarList {
@@ -86,15 +99,17 @@
 
 .navbarItem {
   padding: 0 40px;
-  border-right: 2px solid var(--grey-200);
+  border-right: 2px solid var(--text-color-200);
   font-size: 18px;
-  font-weight: 500;
-  color: var(--black-100);
+  font-weight: 400;
+  //color: var(--black-100);
+  color: var(--secondary-color);
   &:last-child {
     border-right: none;
   }
 }
 
 .activeLink {
+  //font-weight: 800;
   color: var(--red-100);
 }

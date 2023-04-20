@@ -2,6 +2,7 @@
 
 .loginPage {
   @extend .mainText;
+  color: var(--text-color-contrast);
 }
 
 .login {
@@ -34,9 +35,14 @@
   font-size: 13px;
   letter-spacing: normal;
   span {
-    color: var(--secondary-light-color);
+    //color: var(--text-color-contrast);
+    color: var(--text-color-600);
+  }
+  a {
+    font-weight: 600;
+    color: var(--neutral-color-1);
   }
   a:hover {
-    color: var(--hover-color);
+    //color: car();
   }
 }

@@ -7,32 +7,25 @@
   --grey-200: #e0e0e0;
   --grey-300: #c4c4c4;
   --grey-400: #bcbcbc;
+  --grey-500: #888888;
+  --grey-600: #7a7a7a;
 
-  --blue-100: #393280;
+  //--blue-100: #393280;
+  --blue-100: #173f5f;
 
   --red-100: #ed553b;
 }
 
 html[color-theme='light'] {
   --primary-color: var(--grey-100);
-  --primary-light-color: var(--white);
-  --secondary-color: var(--black);
-  --secondary-light-color: var(--grey-200);
-  --neutral-color: var(--navy-blue-300);
-  --neutral-additional-color: var(--white);
-  --hover-color: var(--navy-blue-200);
-  --hover-additional-color: var(--navy-blue-100);
-  --shadow: var(--dark-shadow);
-}
-
-html[color-theme='dark'] {
-  --primary-color: var(--dark-grey-200);
-  --primary-light-color: var(--dark-grey-100);
-  --secondary-color: var(--blue-200);
-  --secondary-light-color: var(--blue-100);
-  --neutral-color: var(--blue-200);
-  --neutral-additional-color: var(--blue-400);
-  --hover-color: var(--navy-blue-100);
-  --hover-additional-color: var(--blue-300);
-  --shadow: var(--light-shadow);
+  --secondary-color: var(--white);
+  --neutral-color-1: var(--blue-100);
+  --neutral-color-2: var(--red-100);
+  --text-color-100: var(--grey-100);
+  --text-color-200: var(--grey-200);
+  --text-color-300: var(--grey-300);
+  --text-color-400: var(--grey-400);
+  --text-color-500: var(--grey-500);
+  --text-color-600: var(--grey-600);
+  --text-color-contrast: var(--black-100);
 }

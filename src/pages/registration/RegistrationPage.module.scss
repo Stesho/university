@@ -2,6 +2,7 @@
 
 .registrationPage {
   @extend .mainText;
+  color: var(--text-color-contrast);
 }
 
 .registration {

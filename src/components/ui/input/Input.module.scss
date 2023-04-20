@@ -8,14 +8,15 @@
   -webkit-box-sizing: border-box;
   width: 100%;
   padding: 11px;
-  border: 1px solid var(--grey-400);
+  border: 1px solid var(--text-color-400);
   border-radius: 4px;
   height: 40px;
 
   font-size: 14px;
   line-height: 16px;
-  color: var(--black-100);
-  background-color: rgba(var(--grey-100), 0.4);
+  color: var(--text-color-contrast);
+  //background-color: rgba(var(--secondary-color), 0.4);
+  background-color: var(--secondary-color);
 
   outline: none;
 
@@ -23,6 +24,6 @@
   transition-property: border, background-color, color;
 
   &:focus {
-    border: 1px solid var(--black-100);
+    border: 1px solid var(--text-color-contrast);
   }
 }

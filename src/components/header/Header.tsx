@@ -16,8 +16,8 @@ const Header = () => {
     active.isActive ? `${styles.activeLink}` : '';
 
   return (
-    <header className={`${styles.header} container`}>
-      <div className={styles.topPanel}>
+    <header className={styles.header}>
+      <div className={`${styles.topPanel} container`}>
         <NavLink to={'/home'} className={styles.logo}>
           <Logo />
         </NavLink>
