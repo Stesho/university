@@ -49,8 +49,7 @@ const LoginPage = () => {
             className={styles.input}
             placeholder={'Password'}
           />
-          {/*<button onClick={onSubmit}>Sign In</button>*/}
-          <Button>Sign In</Button>
+          <Button onClick={onSubmit}>Sign In</Button>
         </form>
         <div className={styles.create}>
           <span>{"Don't have an account? "}</span>

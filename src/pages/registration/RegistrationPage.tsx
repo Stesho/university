@@ -4,6 +4,7 @@ import styles from './RegistrationPage.module.scss';
 import User from '../../core/types/user';
 import Input from '../../components/ui/input/Input';
 import { NavLink } from 'react-router-dom';
+import Button from '../../components/ui/button/Button';
 
 const RegistrationPage = () => {
   const [username, setUsername] = useState('');
@@ -54,7 +55,7 @@ const RegistrationPage = () => {
             className={styles.input}
             placeholder={'Confirm password'}
           />
-          <button onClick={onSubmit}>Create Account</button>
+          <Button onClick={onSubmit}>Create Account</Button>
         </form>
       </div>
     </main>
