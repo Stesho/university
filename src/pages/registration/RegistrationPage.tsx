@@ -19,6 +19,7 @@ const RegistrationPage = () => {
       email,
       password,
     };
+    console.log(user);
     const response = await api.signUp(user);
     console.log(response);
   };
@@ -31,7 +32,7 @@ const RegistrationPage = () => {
         <form className={styles.form} onSubmit={preventDefaultSubmit}>
           <Input
             onChange={setUsername}
-            type="email"
+            type="text"
             className={styles.input}
             placeholder={'Username'}
           />

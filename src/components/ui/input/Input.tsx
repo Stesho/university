@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Input.module.scss';
 
-export interface InputProps {
+interface InputProps {
   onChange: (newValue: string) => void;
   type?: 'text' | 'password' | 'email' | 'number';
   value?: string;

@@ -1,0 +1,22 @@
+.btn {
+  padding: 13px 27px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.15rem;
+  background: var(--neutral-color);
+  color: var(--neutral-additional-color);
+  transition: all 0.5s;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--hover-color);
+    box-shadow: 0px 0px 10px var(--hover-color);
+  }
+  &:disabled {
+    color: var(--white);
+    background-color: var(--grey-200);
+  }
+  &:disabled:hover {
+    box-shadow: none;
+    cursor: auto;
+  }
+}

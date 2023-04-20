@@ -5,6 +5,7 @@ import api from '../../core/api/api';
 import { setCookie } from '../../core/services/cookie';
 import Input from '../../components/ui/input/Input';
 import { NavLink } from 'react-router-dom';
+import Button from '../../components/ui/button/Button';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -32,7 +33,7 @@ const LoginPage = () => {
         <form className={styles.form} onSubmit={preventDefaultSubmit}>
           <Input
             onChange={setUsername}
-            type="email"
+            type="text"
             className={styles.input}
             placeholder={'Username'}
           />
@@ -48,7 +49,8 @@ const LoginPage = () => {
             className={styles.input}
             placeholder={'Password'}
           />
-          <button onClick={onSubmit}>Sign In</button>
+          {/*<button onClick={onSubmit}>Sign In</button>*/}
+          <Button>Sign In</Button>
         </form>
         <div className={styles.create}>
           <span>{"Don't have an account? "}</span>

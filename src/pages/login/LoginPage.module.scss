@@ -35,7 +35,6 @@
   font-size: 13px;
   letter-spacing: normal;
   span {
-    //color: var(--text-color-contrast);
     color: var(--text-color-600);
   }
   a {
@@ -43,6 +42,6 @@
     color: var(--neutral-color-1);
   }
   a:hover {
-    //color: car();
+    color: var(--hover-neutral-color-1);
   }
 }

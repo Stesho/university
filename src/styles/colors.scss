@@ -11,16 +11,21 @@
   --grey-600: #7a7a7a;
 
   //--blue-100: #393280;
-  --blue-100: #173f5f;
+  --blue-100: #678faf;
+  --blue-200: #173f5f;
 
-  --red-100: #ed553b;
+  --red-100: #ff7d63;
+  --red-200: #ed553b;
 }
 
 html[color-theme='light'] {
   --primary-color: var(--grey-100);
+
   --secondary-color: var(--white);
-  --neutral-color-1: var(--blue-100);
-  --neutral-color-2: var(--red-100);
+
+  --neutral-color-1: var(--blue-200);
+  --neutral-color-2: var(--red-200);
+
   --text-color-100: var(--grey-100);
   --text-color-200: var(--grey-200);
   --text-color-300: var(--grey-300);
@@ -28,4 +33,7 @@ html[color-theme='light'] {
   --text-color-500: var(--grey-500);
   --text-color-600: var(--grey-600);
   --text-color-contrast: var(--black-100);
+
+  --hover-neutral-color-1: var(--blue-100);
+  --hover-neutral-color-2: var(--red-100);
 }
