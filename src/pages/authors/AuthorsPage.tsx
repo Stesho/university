@@ -18,8 +18,12 @@ const AuthorsPage = () => {
 
   return (
     <main className={`${styles.authorsPage} container`}>
-      Authors
-      <AuthorsList authors={authors} />
+      <h2 className={styles.title}>Authors</h2>
+      {authors.length > 0 ? (
+        <AuthorsList authors={authors} />
+      ) : (
+        <span className={styles.noAuthors}>Authors not found</span>
+      )}
     </main>
   );
 };

@@ -1,0 +1,10 @@
+@import '../../styles/typography.scss';
+
+.authorsPage {
+  @extend .mainText;
+}
+
+.title {
+  padding: 40px 0;
+  text-align: center;
+}

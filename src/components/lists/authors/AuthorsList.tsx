@@ -9,7 +9,7 @@ interface AuthorsList {
 
 const AuthorsList = (props: AuthorsList) => {
   return (
-    <ul>
+    <ul className={styles.list}>
       {props.authors.map((author) => (
         <AuthorCard author={author} key={author.id} />
       ))}
