@@ -17,7 +17,7 @@ const AuthorsPage = () => {
   }, []);
 
   return (
-    <main className={`${styles.authorsPage} container`}>
+    <main className={`${styles.authorsPage} container page`}>
       <h2 className={styles.title}>Authors</h2>
       {authors.length > 0 ? (
         <AuthorsList authors={authors} />

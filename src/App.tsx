@@ -4,6 +4,7 @@ import HomePage from './pages/home/HomePage';
 import BooksPage from './pages/books/BooksPage';
 import RegistrationPage from './pages/registration/RegistrationPage';
 import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 import LoginPage from './pages/login/LoginPage';
 import AuthorsPage from './pages/authors/AuthorsPage';
 
@@ -20,6 +21,7 @@ function App() {
         <Route path={'/registration'} element={<RegistrationPage />} />
         <Route path={'/login'} element={<LoginPage />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
