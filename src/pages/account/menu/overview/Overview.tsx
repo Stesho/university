@@ -10,7 +10,7 @@ const Overview = () => {
 
   return (
     <section className={styles.overview}>
-      <h2 className={styles.title}>Overview</h2>
+      <h2 className={`accountPageTitle`}>Overview</h2>
       <p className={styles.caption}>
         Feel free to edit any of your details below so your account is totally
         up to date.
