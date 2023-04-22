@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Header.module.scss';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as AccountIcon } from '../../assets/icons/account-icon.svg';
@@ -6,17 +6,20 @@ import { ReactComponent as CartIcon } from '../../assets/icons/cart-icon.svg';
 import { ReactComponent as WishListIcon } from '../../assets/icons/wishlist-icon.svg';
 import { ReactComponent as SearchIcon } from '../../assets/icons/search-icon.svg';
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
+import useScrollDirection from '../../core/hooks/useScrollDirection';
 
 type ActiveLink = {
   isActive: boolean;
 };
 
 const Header = () => {
+  const isHeaderShown = useScrollDirection();
+
   const setActiveLink = (active: ActiveLink) =>
     active.isActive ? `${styles.activeLink}` : '';
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isHeaderShown ? '' : styles.hide}`}>
       <div className={`${styles.topPanel} container`}>
         <NavLink to={'/home'} className={styles.logo}>
           <Logo />
