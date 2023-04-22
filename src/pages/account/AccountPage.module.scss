@@ -1,0 +1,33 @@
+@import '../../styles/typography.scss';
+
+.menu {
+  @extend .mainText;
+  width: 350px;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+  &:hover {
+    background-color: var(--hover-neutral-color-1);
+  }
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
+  margin: 0 10px 0 0;
+  path {
+    fill: var(--neutral-color-1);
+  }
+}
+
+.activeLink {
+  background-color: var(--neutral-color-1);
+  color: var(--secondary-color);
+  .icon path {
+    fill: var(--secondary-color);
+  }
+}

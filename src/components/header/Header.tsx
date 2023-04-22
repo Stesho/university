@@ -7,10 +7,7 @@ import { ReactComponent as WishListIcon } from '../../assets/icons/wishlist-icon
 import { ReactComponent as SearchIcon } from '../../assets/icons/search-icon.svg';
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
 import useScrollDirection from '../../core/hooks/useScrollDirection';
-
-type ActiveLink = {
-  isActive: boolean;
-};
+import ActiveLink from '../../core/types/activeLink';
 
 const Header = () => {
   const isHeaderShown = useScrollDirection();
