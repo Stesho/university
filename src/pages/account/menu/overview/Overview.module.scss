@@ -1,0 +1,27 @@
+@import '../../../../styles/typography.scss';
+
+.overview {
+  @extend .mainText;
+  padding: 0 0 10px 0;
+}
+
+.title {
+  margin: 0 0 20px 0;
+  color: var(--neutral-color-1);
+}
+
+.caption {
+  margin: 0 0 10px 0;
+  color: var(--neutral-color-1);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+}
+
+.input {
+  margin: 0 0 15px 0;
+}
