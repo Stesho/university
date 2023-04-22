@@ -1,8 +1,14 @@
 @import '../../styles/typography.scss';
 
+.account {
+  display: flex;
+}
+
 .menu {
   @extend .mainText;
   width: 350px;
+  padding: 0 20px 0 0;
+  border-right: 1px solid var(--neutral-color-1);
 }
 
 .menuItem {
@@ -30,4 +36,9 @@
   .icon path {
     fill: var(--secondary-color);
   }
+}
+
+.content {
+  flex: 1;
+  padding: 0 20px;
 }
