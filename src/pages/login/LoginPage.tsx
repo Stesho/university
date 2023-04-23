@@ -6,11 +6,13 @@ import { setCookie } from '../../core/utils/cookie';
 import Input from '../../components/ui/input/Input';
 import { NavLink } from 'react-router-dom';
 import Button from '../../components/ui/button/Button';
+import { useStore } from '../../context/storeContext';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const userStore = useStore('UserStore');
 
   const preventDefaultSubmit = (event: React.FormEvent<HTMLFormElement>) =>
     event.preventDefault();
@@ -21,8 +23,7 @@ const LoginPage = () => {
       email,
       password,
     };
-    const response = await api.signIn(user);
-    setCookie('token', response.token);
+    await userStore.singIn(user);
   };
 
   return (

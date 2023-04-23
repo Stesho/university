@@ -3,13 +3,15 @@ import api from '../../core/api/api';
 import styles from './RegistrationPage.module.scss';
 import User from '../../core/types/user';
 import Input from '../../components/ui/input/Input';
-import { NavLink } from 'react-router-dom';
 import Button from '../../components/ui/button/Button';
+import userStore from '../../store/userStore';
+import { useStore } from '../../context/storeContext';
 
 const RegistrationPage = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const userStore = useStore('UserStore');
 
   const preventDefaultSubmit = (event: React.FormEvent<HTMLFormElement>) =>
     event.preventDefault();
@@ -20,9 +22,7 @@ const RegistrationPage = () => {
       email,
       password,
     };
-    console.log(user);
-    const response = await api.signUp(user);
-    console.log(response);
+    await userStore.signUp(user);
   };
 
   return (
