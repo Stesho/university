@@ -6,23 +6,24 @@ import {
 } from '../constants/apiConstants';
 import User from '../types/user';
 import axios from 'axios';
-import { getCookie } from '../services/cookie';
+import { getCookie } from '../utils/cookie';
 import Author from '../types/author';
 
 const api = {
-  signUp: async (user: User): Promise<User> => {
+  signUp: async (user: User): Promise<User | null> => {
     try {
       const response = await axios.post(`${BASE_URL}${SIGNUP_URL}`, {
         ...user,
       });
 
-      if (response.status !== 200) {
-        throw new Error(response.statusText);
-      }
-
       return response.data;
     } catch (error) {
-      throw new Error('Unknown Error');
+      if (axios.isAxiosError(error)) {
+        console.log(error.toJSON());
+      } else {
+        console.error(error);
+      }
+      return null;
     }
   },
   signIn: async (user: User) => {
@@ -31,16 +32,17 @@ const api = {
         ...user,
       });
 
-      if (response.status !== 200) {
-        throw new Error(response.statusText);
-      }
-
       return response.data;
     } catch (error) {
-      throw new Error('Unknown Error');
+      if (axios.isAxiosError(error)) {
+        console.log(error.toJSON());
+      } else {
+        console.error(error);
+      }
+      return null;
     }
   },
-  fetchAuthors: async (): Promise<Author[]> => {
+  fetchAuthors: async (): Promise<Author[] | null> => {
     try {
       const token = getCookie('token');
       const response = await axios.get(`${BASE_URL}${AUTHORS_URL}`, {
@@ -49,13 +51,14 @@ const api = {
         },
       });
 
-      if (response.status !== 200) {
-        throw new Error(response.statusText);
-      }
-
       return response.data;
     } catch (error) {
-      throw new Error('Unknown Error');
+      if (axios.isAxiosError(error)) {
+        console.log(error.toJSON());
+      } else {
+        console.error(error);
+      }
+      return null;
     }
   },
 };

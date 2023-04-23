@@ -9,7 +9,9 @@ const AuthorsPage = () => {
 
   const fetchAuthors = async (): Promise<void> => {
     const authors = await api.fetchAuthors();
-    setAuthors(authors);
+    if (authors !== null) {
+      setAuthors(authors);
+    }
   };
 
   useEffect(() => {

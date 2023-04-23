@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './LoginPage.module.scss';
 import User from '../../core/types/user';
 import api from '../../core/api/api';
-import { setCookie } from '../../core/services/cookie';
+import { setCookie } from '../../core/utils/cookie';
 import Input from '../../components/ui/input/Input';
 import { NavLink } from 'react-router-dom';
 import Button from '../../components/ui/button/Button';
