@@ -15,7 +15,7 @@ class UserStore {
 
     if (response !== null) {
       this.user = response;
-      setCookie('token', response.token);
+      // setCookie('token', response.token);
     }
   }
 
