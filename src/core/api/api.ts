@@ -4,7 +4,7 @@ import {
   SIGNIN_URL,
   SIGNUP_URL,
 } from '../constants/apiConstants';
-import User from '../types/user';
+import User, { AuthData, UserApiResponse } from '../types/user';
 import axios from 'axios';
 import { getCookie } from '../utils/cookie';
 import Author from '../types/author';
@@ -17,8 +17,9 @@ interface IApi {
     url: string,
     config: object,
   ) => Promise<any>;
-  signUp: (user: User) => Promise<User | null>;
-  signIn: (user: User) => Promise<User | null>;
+  signUp: (user: AuthData) => Promise<UserApiResponse | null>;
+  signIn: (user: AuthData) => Promise<UserApiResponse | null>;
+  // signIn: (user: User) => Promise<UserApiResponse | null>;
   fetchAuthors: () => Promise<Author[] | null>;
 }
 
@@ -47,16 +48,16 @@ class Api implements IApi {
     }
   }
 
-  async signUp(user: User): Promise<User | null> {
-    return await this.fetch<User>('post', SIGNUP_URL, {
+  async signUp(user: AuthData): Promise<UserApiResponse | null> {
+    return await this.fetch('post', SIGNUP_URL, {
       data: {
         ...user,
       },
     });
   }
 
-  async signIn(user: User): Promise<User | null> {
-    return await this.fetch<User>('post', SIGNIN_URL, {
+  async signIn(user: AuthData): Promise<UserApiResponse | null> {
+    return await this.fetch('post', SIGNIN_URL, {
       data: {
         ...user,
       },

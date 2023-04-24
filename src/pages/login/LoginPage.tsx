@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './LoginPage.module.scss';
-import User from '../../core/types/user';
+import User, { AuthData } from '../../core/types/user';
 import api from '../../core/api/api';
 import { setCookie } from '../../core/utils/cookie';
 import Input from '../../components/ui/input/Input';
@@ -18,7 +18,7 @@ const LoginPage = () => {
     event.preventDefault();
 
   const onSubmit = async () => {
-    const user: User = {
+    const user: AuthData = {
       username,
       email,
       password,

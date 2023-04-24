@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx';
-import User from '../core/types/user';
+import User, { AuthData } from '../core/types/user';
 import api from '../core/api/api';
 import { setCookie } from '../core/utils/cookie';
 
@@ -10,16 +10,16 @@ class UserStore {
     makeAutoObservable(this);
   }
 
-  async singIn(user: User): Promise<void> {
+  async singIn(user: AuthData): Promise<void> {
     const response = await api.signIn(user);
 
     if (response !== null) {
       this.user = response;
-      // setCookie('token', response.token);
+      setCookie('token', response.token);
     }
   }
 
-  async signUp(user: User): Promise<void> {
+  async signUp(user: AuthData): Promise<void> {
     const response = await api.signUp(user);
 
     if (response !== null) {

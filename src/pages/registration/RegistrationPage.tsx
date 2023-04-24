@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import api from '../../core/api/api';
 import styles from './RegistrationPage.module.scss';
-import User from '../../core/types/user';
+import User, { AuthData } from '../../core/types/user';
 import Input from '../../components/ui/input/Input';
 import Button from '../../components/ui/button/Button';
 import userStore from '../../store/userStore';
@@ -17,7 +17,7 @@ const RegistrationPage = () => {
     event.preventDefault();
 
   const onSubmit = async () => {
-    const user: User = {
+    const user: AuthData = {
       username,
       email,
       password,
