@@ -4,7 +4,7 @@ import api from '../core/api/api';
 import { setCookie } from '../core/utils/cookie';
 
 class UserStore {
-  user: User | null = null;
+  private user: User | null = null;
 
   constructor() {
     makeAutoObservable(this);
@@ -25,6 +25,10 @@ class UserStore {
     if (response !== null) {
       this.user = response;
     }
+  }
+
+  getUser() {
+    return this.user;
   }
 }
 

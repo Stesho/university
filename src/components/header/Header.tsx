@@ -8,9 +8,12 @@ import { ReactComponent as SearchIcon } from '../../assets/icons/search-icon.svg
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
 import useScrollDirection from '../../core/hooks/useScrollDirection';
 import ActiveLink from '../../core/types/activeLink';
+import { useStore } from '../../context/storeContext';
+import { observer } from 'mobx-react';
 
-const Header = () => {
+const Header = observer(() => {
   const isHeaderShown = useScrollDirection();
+  const userStore = useStore('UserStore');
 
   const setActiveLink = (active: ActiveLink) =>
     active.isActive ? `${styles.activeLink}` : '';
@@ -26,10 +29,17 @@ const Header = () => {
           <SearchIcon className={styles.searchIcon} />
         </div>
         <div className={styles.menu}>
-          <NavLink to={'/login'} className={styles.account}>
-            <AccountIcon className={styles.accountIcon} />
-            <span className={styles.accountCaption}>Account</span>
-          </NavLink>
+          {userStore.getUser() ? (
+            <NavLink to={'/account'} className={styles.account}>
+              <AccountIcon className={styles.accountIcon} />
+              <span className={styles.accountCaption}>Account</span>
+            </NavLink>
+          ) : (
+            <NavLink to={'/login'} className={styles.account}>
+              <AccountIcon className={styles.accountIcon} />
+              <span className={styles.accountCaption}>Sign in</span>
+            </NavLink>
+          )}
           <NavLink to={'/cart'} className={styles.cart}>
             <CartIcon className={styles.cartIcon} />
             <span className={styles.cartCaption}>Cart:(0$)</span>
@@ -71,6 +81,6 @@ const Header = () => {
       </nav>
     </header>
   );
-};
+});
 
 export default Header;

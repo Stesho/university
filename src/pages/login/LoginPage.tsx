@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import styles from './LoginPage.module.scss';
-import User, { AuthData } from '../../core/types/user';
-import api from '../../core/api/api';
-import { setCookie } from '../../core/utils/cookie';
+import { AuthData } from '../../core/types/user';
 import Input from '../../components/ui/input/Input';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Button from '../../components/ui/button/Button';
 import { useStore } from '../../context/storeContext';
+import { ACCOUNT_ROUTE } from '../../core/constants/routes';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const userStore = useStore('UserStore');
+  const navigate = useNavigate();
 
   const preventDefaultSubmit = (event: React.FormEvent<HTMLFormElement>) =>
     event.preventDefault();
@@ -24,6 +24,9 @@ const LoginPage = () => {
       password,
     };
     await userStore.singIn(user);
+    if (userStore.getUser()) {
+      navigate(ACCOUNT_ROUTE);
+    }
   };
 
   return (

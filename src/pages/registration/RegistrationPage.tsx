@@ -6,12 +6,15 @@ import Input from '../../components/ui/input/Input';
 import Button from '../../components/ui/button/Button';
 import userStore from '../../store/userStore';
 import { useStore } from '../../context/storeContext';
+import { ACCOUNT_ROUTE } from '../../core/constants/routes';
+import { useNavigate } from 'react-router-dom';
 
 const RegistrationPage = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const userStore = useStore('UserStore');
+  const navigate = useNavigate();
 
   const preventDefaultSubmit = (event: React.FormEvent<HTMLFormElement>) =>
     event.preventDefault();
@@ -23,6 +26,9 @@ const RegistrationPage = () => {
       password,
     };
     await userStore.signUp(user);
+    if (userStore.getUser()) {
+      navigate(ACCOUNT_ROUTE);
+    }
   };
 
   return (
