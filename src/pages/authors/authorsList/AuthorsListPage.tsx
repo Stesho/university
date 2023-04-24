@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import styles from './AuthorsPage.module.scss';
-import api from '../../core/api/api';
-import AuthorsList from '../../components/lists/authors/AuthorsList';
-import Author from '../../core/types/author';
+import styles from './AuthorsListPage.module.scss';
+import api from '../../../core/api/api';
+import AuthorsList from '../../../components/lists/authors/AuthorsList';
+import Author from '../../../core/types/author';
 
-const AuthorsPage = () => {
+const AuthorsListPage = () => {
   const [authors, setAuthors] = useState<Author[]>([]);
 
   const fetchAuthors = async (): Promise<void> => {
@@ -30,4 +30,4 @@ const AuthorsPage = () => {
   );
 };
 
-export default AuthorsPage;
+export default AuthorsListPage;

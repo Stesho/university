@@ -21,13 +21,14 @@ interface IApi {
   signIn: (user: AuthData) => Promise<UserApiResponse | null>;
   // signIn: (user: User) => Promise<UserApiResponse | null>;
   fetchAuthors: () => Promise<Author[] | null>;
+  fetchAuthorById: (id: number) => Promise<Author | null>;
 }
 
 class Api implements IApi {
   async fetch<T>(
     method: RequestMethod,
     url: string,
-    config: object,
+    config?: object,
   ): Promise<T | null> {
     try {
       const response = await axios({
@@ -71,6 +72,10 @@ class Api implements IApi {
         Authorization: `Bearer ${token}`,
       },
     });
+  }
+
+  async fetchAuthorById(id: number): Promise<Author | null> {
+    return await this.fetch('get', `${AUTHORS_URL}/${id}`);
   }
 }
 

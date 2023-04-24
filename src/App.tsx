@@ -6,13 +6,14 @@ import RegistrationPage from './pages/registration/RegistrationPage';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import LoginPage from './pages/login/LoginPage';
-import AuthorsPage from './pages/authors/AuthorsPage';
+import AuthorsListPage from './pages/authors/authorsList/AuthorsListPage';
 import AccountPage from './pages/account/AccountPage';
 import Overview from './pages/account/menu/overview/Overview';
 import Books from './pages/account/menu/books/Books';
 import Authors from './pages/account/menu/authors/Authors';
 import Genres from './pages/account/menu/genres/Genres';
 import Users from './pages/account/menu/users/Users';
+import AuthorPage from './pages/authors/author/AuthorPage';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       <Routes>
         <Route path={'/'} element={<HomePage />} />
         <Route path={'/books'} element={<BooksPage />} />
-        <Route path={'/authors'} element={<AuthorsPage />} />
+        <Route path={'/authors'} element={<AuthorsListPage />} />
+        <Route path={'/authors/:authorId'} element={<AuthorPage />} />
         <Route path={'/genres'} element={<HomePage />} />
         <Route path={'/contacts'} element={<HomePage />} />
         <Route path={'/registration'} element={<RegistrationPage />} />
