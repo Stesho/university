@@ -15,7 +15,6 @@ class UserStore {
 
     if (response !== null) {
       this.user = response;
-      setCookie('token', response.token);
     }
   }
 
@@ -25,6 +24,10 @@ class UserStore {
     if (response !== null) {
       this.user = response;
     }
+  }
+
+  async logout(): Promise<void> {
+    this.user = null;
   }
 
   getUser() {

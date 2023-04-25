@@ -20,8 +20,8 @@ const RegistrationPage = () => {
   return (
     <main className={`${styles.registrationPage} container`}>
       <div className={styles.registration}>
-        <h2 className={styles.title}>Registration</h2>
-        <p className={styles.caption}>Please enter your e-mail and password:</p>
+        <h2 className={styles.title}>Регистрация</h2>
+        <p className={styles.caption}>Заполните поля ниже для регистрации:</p>
         <RegistrationForm onSubmit={onSubmit} />
       </div>
     </main>

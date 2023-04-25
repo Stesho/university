@@ -1,20 +1,16 @@
 import React, { useState } from 'react';
-import styles from './Overview.module.scss';
+import styles from './Settings.module.scss';
 import Input from '../../../../components/ui/input/Input';
 import Button from '../../../../components/ui/button/Button';
 
-const Overview = () => {
+const Settings = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   return (
-    <section className={styles.overview}>
-      <h2 className={`accountPageTitle`}>Overview</h2>
-      <p className={styles.caption}>
-        Feel free to edit any of your details below so your account is totally
-        up to date.
-      </p>
+    <section>
+      <h2 className={`accountPageTitle`}>Настройки</h2>
       <form className={styles.form}>
         <Input
           onChange={setUsername}
@@ -46,4 +42,4 @@ const Overview = () => {
   );
 };
 
-export default Overview;
+export default Settings;

@@ -1,10 +1,15 @@
 @import '../../../styles/typography';
 
-.authorsPage {
+.studentTable {
   @extend .mainText;
 }
 
+.titles {
+  display: flex;
+  width: 100%;
+}
+
 .title {
-  padding: 0 0 40px 0;
+  flex: 1;
   text-align: center;
 }

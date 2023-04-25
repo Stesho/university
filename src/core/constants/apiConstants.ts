@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:8081';
-export const SIGNUP_URL = '/api/auth/signup';
-export const SIGNIN_URL = '/api/auth/signin';
+export const BASE_URL = 'http://localhost:8080';
+export const SIGNUP_URL = '/api/users/';
+export const SIGNIN_URL = '/api/users/login';
 export const AUTHORS_URL = '/api/author';

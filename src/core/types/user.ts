@@ -1,14 +1,15 @@
-import Book from './book';
+import Student from './student';
 
-type Roles = 'ROLE_ADMIN' | 'ROLE_USER';
+type Roles = 'Student' | 'Teacher';
 
 interface User {
   id: number;
   username: string;
   email: string;
-  // isVerified: boolean;
-  // readBooks: Book[];
-  roles: Roles;
+  photoName: string;
+  // lecturer: Lecturer;
+  // roles: Roles[];
+  // student: Student;
 }
 
 type AuthData = Pick<User, 'username' | 'email'> & { password: string };

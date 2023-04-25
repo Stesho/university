@@ -22,12 +22,10 @@ const LoginPage = () => {
   return (
     <main className={`${styles.loginPage} container`}>
       <div className={styles.login}>
-        <h2 className={styles.title}>Login</h2>
-        <p className={styles.caption}>Please enter your e-mail and password:</p>
+        <h2 className={styles.title}>Вход</h2>
         <LoginForm onSubmit={onSubmit} />
         <div className={styles.create}>
-          <span>{"Don't have an account? "}</span>
-          <NavLink to="/registration">Create one</NavLink>
+          <NavLink to="/registration">Зарегистрироваться</NavLink>
         </div>
       </div>
     </main>
