@@ -14,6 +14,7 @@ import Authors from './pages/account/menu/authors/Authors';
 import Genres from './pages/account/menu/genres/Genres';
 import Users from './pages/account/menu/users/Users';
 import AuthorPage from './pages/authors/author/AuthorPage';
+import AuthorEditPage from './pages/authors/edit/AuthorEditPage';
 
 function App() {
   return (
@@ -21,14 +22,17 @@ function App() {
       <Header />
       <Routes>
         <Route path={'/'} element={<HomePage />} />
-        <Route path={'/books'} element={<BooksPage />} />
-        <Route path={'/authors'} element={<AuthorsListPage />} />
-        <Route path={'/authors/:authorId'} element={<AuthorPage />} />
-        <Route path={'/genres'} element={<HomePage />} />
-        <Route path={'/contacts'} element={<HomePage />} />
-        <Route path={'/registration'} element={<RegistrationPage />} />
-        <Route path={'/login'} element={<LoginPage />} />
-        <Route path={'/account'} element={<AccountPage />}>
+        <Route path={'books'} element={<BooksPage />} />
+        <Route path={'authors'}>
+          <Route index element={<AuthorsListPage />} />
+          <Route path={':authorId'} element={<AuthorPage />} />
+          <Route path={'edit/:authorId'} element={<AuthorEditPage />} />
+        </Route>
+        <Route path={'genres'} element={<HomePage />} />
+        <Route path={'contacts'} element={<HomePage />} />
+        <Route path={'registration'} element={<RegistrationPage />} />
+        <Route path={'login'} element={<LoginPage />} />
+        <Route path={'account'} element={<AccountPage />}>
           <Route index element={<Navigate to="/account/overview" />} />
           <Route path={'/account/overview'} element={<Overview />} />
           <Route path={'/account/books'} element={<Books />} />

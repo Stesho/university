@@ -21,6 +21,7 @@ const AuthorPage = observer(() => {
   };
 
   useEffect(() => {
+    console.log('asdasdasdas');
     fetchAuthor();
   }, []);
 
