@@ -11,20 +11,20 @@
   --grey-600: #7a7a7a;
 
   //--blue-100: #393280;
-  --blue-100: #678faf;
-  --blue-200: #173f5f;
+  --blue-100: #6786b8;
+  --blue-200: #3a547f;
 
   --red-100: #ff7d63;
-  --red-200: #ed553b;
+  --red-200: #6786b8;
 }
 
 html[color-theme='light'] {
-  --primary-color: var(--grey-100);
+  --primary-color: var(--white);
 
-  --secondary-color: var(--white);
+  --secondary-color: var(--grey-100);
 
   --neutral-color-1: var(--blue-200);
-  --neutral-color-2: var(--red-200);
+  --neutral-color-2: var(--blue-100);
 
   --text-color-100: var(--grey-100);
   --text-color-200: var(--grey-200);

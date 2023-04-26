@@ -11,67 +11,9 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       <div className={`${styles.content} container`}>
-        <div className={styles.main}>
-          <div className={styles.follow}>
-            <Logo className={styles.logo} />
-            <p className={styles.caption}>
-              Subscribe to our social networks and receive news about our
-              releases
-            </p>
-            <ul className={styles.social}>
-              <li className={styles.socialLink}>
-                <Link to={''} target={'_blank'}>
-                  <LinkedinIcon />
-                </Link>
-              </li>
-              <li className={styles.socialLink}>
-                <Link to={'https://github.com/GorbachMaxim'} target={'_blank'}>
-                  <GithubIcon />
-                </Link>
-              </li>
-              <li className={styles.socialLink}>
-                <Link to={''} target={'_blank'}>
-                  <InstagramIcon />
-                </Link>
-              </li>
-              <li className={styles.socialLink}>
-                <Link to={'https://vk.com/cringe_developer'} target={'_blank'}>
-                  <VkIcon />
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className={styles.about}>
-            <h4 className={styles.title}>About</h4>
-            <ul className={styles.list}>
-              <li className={styles.listItem}>
-                <Link to={'/home'}>Home</Link>
-              </li>
-              <li className={styles.listItem}>
-                <Link to={'/authors'}>Authors</Link>
-              </li>
-              <li className={styles.listItem}>
-                <Link to={'/genres'}>Genres</Link>
-              </li>
-            </ul>
-          </div>
-          <div className={styles.contacts}>
-            <h4 className={styles.title}>Contacts</h4>
-            <ul className={styles.list}>
-              <li className={styles.listItem}>
-                <Link to={'/account'}>Account</Link>
-              </li>
-              <li className={styles.listItem}>
-                <Link to={'/contacts'}>Contact us</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
         <div className={styles.rights}>
           <div>&copy; All Rights Reserved, 2023</div>
-          <div>
-            <span className={styles.privacy}>Privacy</span> | Terms of Service
-          </div>
+          <div>Terms of Service</div>
         </div>
       </div>
     </div>
